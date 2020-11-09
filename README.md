@@ -7,9 +7,27 @@ Quick sorting algorithm uses a divide and conquer approach a bit similar to merg
 ## Partitioning methods 
 
 * Naive approach
-* Lomuto's Partitioning
 * Hoare's Partitioning
+* Lomuto's Partitioning
 * Dutch Flag 
+
+## A naive approach 
+
+```swift 
+func quickSortNaive(_ arr: [Int]) -> [Int] {
+  guard arr.count > 1 else {
+    return arr
+  }
+  let pivot = arr[arr.count / 2] // pick the middle element
+  let left = arr.filter { $0 < pivot }
+  let equal = arr.filter { $0 == pivot }
+  let right = arr.filter { $0 > pivot }
+  return quickSortNaive(left) + equal + quickSortNaive(right)
+}
+
+let sortedArr = quickSortNaive([-33, 0, -4, -20, 59, 17, 29])
+print(sortedArr)
+```
 
 ## Quick sort implmentation using Lomuto's Partitioning 
 
