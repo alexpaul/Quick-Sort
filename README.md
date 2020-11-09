@@ -25,8 +25,8 @@ func quickSortNaive(_ arr: [Int]) -> [Int] {
   return quickSortNaive(left) + equal + quickSortNaive(right)
 }
 
-let sortedArr = quickSortNaive([-33, 0, -4, -20, 59, 17, 29])
-print(sortedArr)
+let sortedArr = quickSortNaive([-33, 0, -4, -20, 59, 17, 29]) 
+print(sortedArr) // [-33, -20, -4, 0, 17, 29, 59]
 ```
 
 ## Quick sort implmentation using Lomuto's Partitioning 
