@@ -7,7 +7,8 @@ Quick sorting algorithm uses a divide and conquer approach a bit similar to merg
 ## Partitioning methods 
 
 * Naive approach
-* Lumoto's Partitioning
+* Lomuto's Partitioning
+* Hoare's Partitioning
 * Dutch Flag 
 
 ## Quick sort implmentation using Lomuto's Partitioning 
