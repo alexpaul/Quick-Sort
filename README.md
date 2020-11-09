@@ -61,3 +61,8 @@ var unsortedArr = [68, 46, 91, 42, -37, 50, 52]
 quickSort(&unsortedArr, 0, unsortedArr.count - 1)
 print(unsortedArr) // [-37, 42, 46, 50, 52, 68, 91]
 ```
+
+## Resources 
+
+1. [Wikipedia - Quicksort](https://en.wikipedia.org/wiki/Quicksort)
+1. [RW - Swift Algorithm Club](https://github.com/raywenderlich/swift-algorithm-club/tree/master/Quicksort)
