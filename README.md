@@ -35,7 +35,7 @@ Steps of the Lomuto's algorithm:
 
 
 ```swift 
-func lomutoPartition(_ arr: inout [Int], low: Int, high: Int) -> Int {
+func lomutoPartitioning(_ arr: inout [Int], _ low: Int, _ high: Int) -> Int {
   var index = low
   let pivot = arr[high]
   for j in low..<high {
@@ -48,15 +48,15 @@ func lomutoPartition(_ arr: inout [Int], low: Int, high: Int) -> Int {
   return index
 }
 
-func quickSort(_ arr: inout [Int], low: Int, high: Int) {
+func quickSort(_ arr: inout [Int], _ low: Int, _ high: Int) {
   if low < high {
-    let pivot = lomutoPartition(&arr, low: low, high: high)
-    quickSort(&arr, low: low, high: pivot - 1)
-    quickSort(&arr, low: pivot + 1, high: high)
+    let pivot = lomutoPartitioning(&arr, low, high)
+    quickSort(&arr, low, pivot - 1)
+    quickSort(&arr, pivot + 1, high)
   }
 }
 
-var unsortedArr = [10, 80, 10, -9, 0, -11, 13]
-quickSort(&unsortedArr, low: 0, high: unsortedArr.count - 1)
-print(unsortedArr) // [-11, -9, 0, 10, 10, 13, 80]
+var unsortedArr = [68, 46, 91, 42, -37, 50, 52]
+quickSort(&unsortedArr, 0, unsortedArr.count - 1)
+print(unsortedArr) // [-37, 42, 46, 50, 52, 68, 91]
 ```
