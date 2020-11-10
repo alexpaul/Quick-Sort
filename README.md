@@ -31,7 +31,10 @@ print(sortedArr) // [-33, -20, -4, 0, 17, 29, 59]
 
 ## Quick sort implmentation using Lomuto's Partitioning 
 
-The Lomuto's algorithm is used to find a new index to use a the pivot when dividing the array in left and right sides. 
+The Lomuto's algorithm chooses the last index when calculating the new pivot point for partitioning the array. 
+
+Runtime: `O(n log n)` uses a divide and conquer approach similar to Merge sort. 
+Space: `O(1)` sorts array in-place  
 
 #### Lomuto's Partiioning Algorithm
 
