@@ -41,8 +41,8 @@ Steps of the Lomuto's algorithm:
 2. Iterate through the array. 
 3. If the current element is less than or equal to the pivot swap the index with the high element. 
 4. If a swap is performed increment the index. 
-5. Swap the index and high. 
-6. Return the index. This index will be used as the new pivot for dividing the array. 
+5. Swap the index and high elements.
+6. Return the index. This index will be used as the new pivot for dividing the array into left and right sub arrays. 
 
 ![quick sort sketch](https://user-images.githubusercontent.com/1819208/98613985-77dff600-22c5-11eb-80c3-2dd2816e4d26.jpg)
 
