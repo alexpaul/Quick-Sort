@@ -2,7 +2,7 @@
 
 Quick sort algorithm in Swift. 
 
-Quick sorting algorithm uses a divide and conquer approach a bit similar to merge sort. Given an unsorted array and a partitioning mehtod listed below a pivot is calculated. The array is divided.....
+Quick sorting algorithm uses a divide and conquer approach a bit similar to merge sort. Given an unsorted array and a partitioning method listed below a pivot is calculated. The array is divided into two sections and the process is continued on each sub array until the array is sorted. 
 
 ## Partitioning methods 
 
