@@ -59,30 +59,64 @@ Steps of the Lomuto's algorithm:
 5. Since Quick sort is done in place the algorithm is done when low index is no longer less than high. 
 
 ```swift 
-func lomutoPartitioning(_ arr: inout [Int], _ low: Int, _ high: Int) -> Int {
-  var index = low
-  let pivot = arr[high]
+// Quick Sort
+
+// First part is using Lomuto's Partitioning to find the index of the new pivot
+func lomutoPartitioning(_ arr: inout [Int], low: Int, high: Int) -> Int {
+  /*
+   Steps of Lomuto's Partitioning
+   1. Use the last element as the pivot
+   2. Iterate the array with i and j variables
+   3. If element at j is less than the pivot then swap i and j, increment i
+   4. Swap i and the high indices
+   5. Return i (new pivot to divide the array using recursion)
+  */
+  var i = low
+  // 1
+  let pivot = arr[high] // last element
+  
+  // 2
   for j in low..<high {
+    // 3
     if arr[j] <= pivot {
-      arr.swapAt(index, j)
-      index += 1
+      // swap
+      arr.swapAt(i, j)
+      i += 1
     }
   }
-  arr.swapAt(index, high)
-  return index
+  
+  // 5
+  arr.swapAt(i, high)
+  
+  // 6
+  return i
 }
 
-func quickSort(_ arr: inout [Int], _ low: Int, _ high: Int) {
-  if low < high {
-    let pivot = lomutoPartitioning(&arr, low, high)
-    quickSort(&arr, low, pivot - 1)
-    quickSort(&arr, pivot + 1, high)
+
+// Second part is using recursion to break up array into subarrays while sorting in place
+func quicksort(_ arr: inout [Int], low: Int, high: Int) {
+  /*
+   Steps for Quick sort using Lomuto's partitioning
+   
+   1. Calculate the new pivot
+   2. left array recursive call will be low, pivot - 1
+   3. right array recursive call will be pivot + 1, high
+  */
+  if low < high { // if there are greater than 1 value keep sorting
+    // 1
+    let pivot = lomutoPartitioning(&arr, low: low, high: high)
+    
+    // 2
+    quicksort(&arr, low: low, high: pivot - 1)
+    
+    // 3
+    quicksort(&arr, low: pivot + 1, high: high)
   }
 }
 
-var unsortedArr = [68, 46, 91, 42, -37, 50, 52]
-quickSort(&unsortedArr, 0, unsortedArr.count - 1)
-print(unsortedArr) // [-37, 42, 46, 50, 52, 68, 91]
+var inputArr = [3, 0, -5, 1, -10, 3]
+quicksort(&inputArr, low: 0, high: inputArr.count - 1)
+print(inputArr)
 ```
 
 ## Resources 
