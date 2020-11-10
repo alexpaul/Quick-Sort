@@ -52,6 +52,8 @@ Steps of the Lomuto's algorithm:
 4. Sort the right array recursivly. 
 5. Since Quick sort is done in place the algorithm is done when low index is no longer less than high. 
 
+![quick sort sketch](https://user-images.githubusercontent.com/1819208/98613985-77dff600-22c5-11eb-80c3-2dd2816e4d26.jpg)
+
 
 ```swift 
 func lomutoPartitioning(_ arr: inout [Int], _ low: Int, _ high: Int) -> Int {
