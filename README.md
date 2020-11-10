@@ -33,8 +33,8 @@ print(sortedArr) // [-33, -20, -4, 0, 17, 29, 59]
 
 The Lomuto's algorithm chooses the last index when calculating the new pivot point for partitioning the array. 
 
-Runtime: `O(n log n)` uses a divide and conquer approach similar to Merge sort. 
-Space: `O(1)` sorts array in-place  
+Runtime: `O(n log n)` uses a divide and conquer approach similar to Merge sort.    
+Space: `O(1)` sorts array in-place, no additional arrays are created as opposed to Merge sort.       
 
 #### Lomuto's Partiioning Algorithm
 
